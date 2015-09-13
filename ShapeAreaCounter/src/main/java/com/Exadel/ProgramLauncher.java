@@ -17,7 +17,6 @@ public class ProgramLauncher {
         Scanner inputScanner = new Scanner(System.in);
 
         introText();
-        //LOG.info("this is logger");
 
         while (true) {
 

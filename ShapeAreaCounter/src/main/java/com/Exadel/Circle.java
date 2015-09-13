@@ -7,7 +7,7 @@ public class Circle implements Shape {
 
     public Circle(double i) {
         parameter = i;
-        area = ((i * i) / 2);
+        area = 3.14*(i * i);
     }
 
     public void setParameter(double i) {

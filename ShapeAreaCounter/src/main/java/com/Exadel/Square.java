@@ -7,7 +7,7 @@ public class Square implements Shape {
 
     public Square(double i) {
         parameter = i;
-        area = ((i * i) / 2);
+        area = i * i;
     }
 
     public void setParameter(double i) {
@@ -15,7 +15,7 @@ public class Square implements Shape {
     }
 
     public void setArea(double i) {
-        area = (3.14 * (i * i));
+        area = i * i;
     }
 
     public double getParameter() {

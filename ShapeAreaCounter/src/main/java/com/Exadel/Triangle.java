@@ -15,7 +15,7 @@ public class Triangle implements Shape {
     }
 
     public void setArea(double i) {
-        area = (3.14 * (i * i));
+        area = ((i * i) / 2);
     }
 
     public double getParameter() {
