@@ -1,51 +1,36 @@
 package com.Exadel;
 
-import static java.lang.Character.getNumericValue;
+import static java.lang.Double.*;
 
 public class ShapeFactory {
 
-    public Shape createShape(String input) {
+    public Shape createShape(String[] input) {
+
         if (input == null) {
             return null;
         }
-        if (String.valueOf(input.charAt(0)).equalsIgnoreCase("T")) {
-            // triangleAreaCounter(Character.getNumericValue(s.charAt(2)));
-            return new Triangle();
 
-        } else if (String.valueOf(input.charAt(0)).equalsIgnoreCase("S")) {
-            //  squareAreaCounter(Character.getNumericValue(s.charAt(2)));
-            return new Square();
+        if (input[1].matches("\\D*")) {
+            System.out.println("Second symbol must be number, not[" + input[1] + "]. Try again...");
+            return null;  //???? -> throw exception
+        }
 
-        } else if (String.valueOf(input.charAt(0)).equalsIgnoreCase("R")) {
-            //  rectangularAreaCounter(Character.getNumericValue(s.charAt(2)));
-            return new Rectangular();
+        if (input[0].equalsIgnoreCase("T")) {
+            return new Triangle(parseDouble(input[1]));
 
-        } else if (String.valueOf(input.charAt(0)).equalsIgnoreCase("C")) {
-            //   circleAreaCounter(Character.getNumericValue(s.charAt(2)));
-            return new Circle();
+        } else if (input[0].equalsIgnoreCase("S")) {
+            return new Square(parseDouble(input[1]));
+
+        } else if (input[0].equalsIgnoreCase("R")) {
+            return new Rectangular(parseDouble(input[1]), parseDouble(input[2]));
+
+        } else if (input[0].equalsIgnoreCase("C")) {
+            return new Circle(parseDouble(input[1]));
 
         } else {
-            System.out.println("Wrong letter. Possible letters -> (C,R,S,T). Try again...");
-            return null;  //????
+            System.out.println("Wrong first letter [" + input[0] + "]. Possible letters -> (C,R,S,T). Try again...");
+            return null;  //???? -> throw exception
         }
+
     }
-
-
-//    private void triangleAreaCounter(int a) {
-//        System.out.println("Triangle area = " + a * a + " units.");
-//    }
-//
-//    public void squareAreaCounter(double a) {
-//
-//        System.out.println("Square area = " + a * a + " units.");
-//    }
-//
-//    private void rectangularAreaCounter(double a) {
-//        System.out.println("Rectangular area = " + a * a + " units.");
-//    }
-//
-//    private void circleAreaCounter(double r) {
-//        System.out.println("Circle area = " + r * r + " units.");
-//    }
-//
 }

@@ -1,7 +1,13 @@
 package com.Exadel;
 
-public abstract class Shape {
+public interface Shape {
 
-    public void shapeTalks() {
-    }
+    double getArea();
+
+    void setArea(double a);
+
+    double getParameter();
+
+    void setParameter(double a);
+
 }

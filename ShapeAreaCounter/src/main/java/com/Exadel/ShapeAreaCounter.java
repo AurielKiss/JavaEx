@@ -10,7 +10,6 @@ public class ShapeAreaCounter {
     }
 }
 
-
 /*
  * a. Nuskaitau ka ivede
  * b. ShapeFactory sukuria figura (isparsinu inputa, ir sukuriu figura)
@@ -18,8 +17,6 @@ public class ShapeAreaCounter {
  * d. Kvieciam figuros metoda, gauti plotui
  * e. Ispausdinam gauta plota
  */
-
-
 
  /*
  *        Uzduotis:

@@ -1,8 +1,28 @@
 package com.Exadel;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
 
-    public void shapeTalks(){
-        System.out.print("Circle talks..");
+    private double parameter = 0;
+    private double area = 0;
+
+    public Circle(double i) {
+        parameter = i;
+        area = ((i * i) / 2);
+    }
+
+    public void setParameter(double i) {
+        i = parameter;
+    }
+
+    public void setArea(double i) {
+        area = (3.14 * (i * i));
+    }
+
+    public double getParameter() {
+        return parameter;
+    }
+
+    public double getArea() {
+        return area;
     }
 }
