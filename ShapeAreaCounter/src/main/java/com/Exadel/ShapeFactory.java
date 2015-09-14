@@ -1,34 +1,73 @@
 package com.Exadel;
 
+import java.util.EmptyStackException;
+
 public class ShapeFactory {
 
     public Shape createShape(String[] input) {
 
-        if (input == null) {
-            return null;
+
+        if (input.length == 1) {
+            System.out.println("Illegal parameters. Try again...");
+
+            throw new NullPointerException();
+
+
+            //return null;
+        }
+        if (input.length == 2) {
+            if ((input[0].equals("")) || (input[1].equals(""))) {
+                System.out.println("Empty symbol. Try again...");
+                throw new NullPointerException();
+                //return null;
+            }
+
+            if ((input[0].equalsIgnoreCase("T")) && (secondInputCheck(input[1]))) {
+                return new Triangle(Double.parseDouble(input[1]));
+
+            } else if ((input[0].equalsIgnoreCase("S")) && (secondInputCheck(input[1]))) {
+                return new Square(Double.parseDouble(input[1]));
+
+            } else if ((input[0].equalsIgnoreCase("C")) && (secondInputCheck(input[1]))) {
+                return new Circle(Double.parseDouble(input[1]));
+
+            } else if (secondInputCheck(input[1])) {
+                System.out.println("Wrong first input (must be a letter) [" + input[0] + "]. Possible letters -> (C,R,S,T). Try again...");
+                throw new NullPointerException();
+                //return null;  //???? -> throw exception
+            } else {
+                System.out.println("Wrong second input (must be a positive number) not->[" + input[1] + "]. Try again...");
+                throw new NullPointerException();
+                //return null;
+            }
+        }
+        if (input.length == 3) {
+            if ((input[0].equalsIgnoreCase("R")) && (secondInputCheck(input[1])) && (secondInputCheck(input[2]))) {
+                return new Rectangle(Double.parseDouble(input[1]), Double.parseDouble(input[2]));
+            }
+            System.out.println("Illegal parameters. Try again...");
+            throw new NullPointerException();
+            //return null;
+        }
+        if (input.length > 3) {
+            System.out.println("Too many parameters. Try again...");
+            throw new NullPointerException();
+            //return null;
         }
 
-        if (input[1].matches("\\D*")) {
-            System.out.println("Second symbol must be number, not[" + input[1] + "]. Try again...");
-            return null;  //???? -> throw exception
-        }
-
-        if (input[0].equalsIgnoreCase("T")) {
-            return new Triangle(Double.parseDouble(input[1]));
-
-        } else if (input[0].equalsIgnoreCase("S")) {
-            return new Square(Double.parseDouble(input[1]));
-
-        } else if (input[0].equalsIgnoreCase("R")) {
-            return new Rectangular(Double.parseDouble(input[1]), Double.parseDouble(input[2]));
-
-        } else if (input[0].equalsIgnoreCase("C")) {
-            return new Circle(Double.parseDouble(input[1]));
-
-        } else {
-            System.out.println("Wrong first letter [" + input[0] + "]. Possible letters -> (C,R,S,T). Try again...");
-            return null;  //???? -> throw exception
-        }
-
+        throw new NullPointerException();
+        //return null;
     }
+
+
+    public boolean secondInputCheck(String input) {
+        if (input.matches("(\\d*[.])?\\d+")) {
+            //System.out.println("Second symbol must be positive number, not[" + input[1] + "]. Try again...");
+            return true;
+        } else return false;
+    }
+
+//    catch (NullPointerException e) {
+//        System.err.println("Caught IOException: " + e.getMessage());
+//    }
 }

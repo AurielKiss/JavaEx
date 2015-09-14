@@ -1,25 +1,12 @@
 package com.Exadel;
 
 public class Circle implements Shape {
+    private final double area;
+    private final double radius;
 
-    private double parameter = 0;
-    private double area = 0;
-
-    public Circle(double i) {
-        parameter = i;
-        area = ((i * i) / 2);
-    }
-
-    public void setParameter(double i) {
-        i = parameter;
-    }
-
-    public void setArea(double i) {
-        area = (3.14 * (i * i));
-    }
-
-    public double getParameter() {
-        return parameter;
+    public Circle(double radius) {
+        this.radius = radius;
+        area = 3.14 * (radius * radius);
     }
 
     public double getArea() {

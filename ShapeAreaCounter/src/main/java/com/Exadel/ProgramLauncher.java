@@ -10,7 +10,7 @@ public class ProgramLauncher {
     private static final Logger LOG = LogManager
             .getLogger(ProgramLauncher.class);
 
-    private static final String DELIMITER = "-|\\s";
+    private static final String DELIMITER = "=|\\s";
 
     public void run() {
 
@@ -29,6 +29,9 @@ public class ProgramLauncher {
             if (keyboardInput.equalsIgnoreCase("EXIT")) {
                 break;
             }
+            if (keyboardInput.equalsIgnoreCase("CLOSE")) {
+                break;
+            }
             //System.exit(0);  // nenaudoti projektams
             //break;
             //return();
@@ -39,7 +42,6 @@ public class ProgramLauncher {
             Shape shape = shapeFactory.createShape(splitInput);
 
             if (shape != null) {
-                LOG.info("Input = " + shape.getParameter());
                 LOG.info("Area = " + shape.getArea());
             }
         }
@@ -49,7 +51,7 @@ public class ProgramLauncher {
         System.out.println();
         System.out.println(">> Welcome to Shape Area Calculator <<");
         System.out.println();
-        System.out.println("Please type first letter of SHAPE (C,R,S,T) and input. Example (R_1_2) or (C-6.5).");
+        System.out.println("Please type first letter of SHAPE (C,R,S,T) and input. Example (R_1_2) or (C=6.5).");
     }
 
 }
