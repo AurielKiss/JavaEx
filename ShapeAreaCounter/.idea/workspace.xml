@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf5f65d-fc7b-42f9-8977-684d9f7e0c4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ShapeAreaCounter.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="ShapeAreaCounter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Exadel/ShapeAreaCounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48397976">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.8279933">
+              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -664,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Exadel/ShapeAreaCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48397976">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.8279933">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
           <folding />
         </state>
       </provider>
