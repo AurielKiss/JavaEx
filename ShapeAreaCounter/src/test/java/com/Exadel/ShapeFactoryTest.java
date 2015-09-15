@@ -25,19 +25,19 @@ public class ShapeFactoryTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test2WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "dA" + "b";
+        String input = "dA b";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test3WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "As" + "b" + "Ca";
+        String input = "As b Ca";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test4WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "A" + "cb" + "Ca" + "d";
+        String input = "A cb Ca d";
         shapeFactory.createShape(input);
     }
 //----------------------------------------------------------------------
@@ -50,19 +50,19 @@ public class ShapeFactoryTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test2WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "12.3" + "0";
+        String input = "12.3 0";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test3WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "0" + "1.56" + "9999";
+        String input = "0 1.56 9999";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test4WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "0.51" + "2.1" + "0" + "300";
+        String input = "0.51 2.1 0 300";
         shapeFactory.createShape(input);
     }
 //-----------------------------------------------------------------------------------
@@ -75,26 +75,26 @@ public class ShapeFactoryTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test2WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = "%" + ";";
+        String input = "% ;";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test3WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = "," + "..." + "!!";
+        String input = ", ... !!";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test4WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = "!!!" + "$$4" + "*" + "~";
+        String input = "!!! $$4 * ~";
         shapeFactory.createShape(input);
     }
 //--------------------------------------------------------------------------------------------
 
     @Test
     public void testLegalInputsShouldReturnSquareObject() {
-        String input = "s" + "2.1";
+        String input = "S 2.1";
         Shape shape = shapeFactory.createShape(input);
         assertNotNull("Shape is null", shape);
         assertTrue("Expected Square, but got: " + shape.getClass(), shape instanceof Square);
@@ -102,7 +102,7 @@ public class ShapeFactoryTest {
 
     @Test
     public void testLegalInputsShouldReturnCircleObject() {
-        String input = "c" + "5.5";
+        String input = "C 5.5";
         Shape shape = shapeFactory.createShape(input);
         assertNotNull("Shape is null", shape);
         assertTrue("Expected Circle, but got: " + shape.getClass(), shape instanceof Circle);
@@ -110,7 +110,7 @@ public class ShapeFactoryTest {
 
     @Test
     public void testLegalInputsShouldReturnTriangleObject() {
-        String input = "T" + "20.5";
+        String input = "T 20.5";
         Shape shape = shapeFactory.createShape(input);
         assertNotNull("Shape is null", shape);
         assertTrue("Expected Triangle, but got: " + shape.getClass(), shape instanceof Triangle);
@@ -118,10 +118,35 @@ public class ShapeFactoryTest {
 
     @Test
     public void testLegalInputsShouldReturnRectangleObject() {
-        String input = "R" + "5.5" + "3";
+        String input = "R 5.5 3";
         Shape shape = shapeFactory.createShape(input);
         assertNotNull("Shape is null", shape);
         assertTrue("Expected Rectangle, but got: " + shape.getClass(), shape instanceof Rectangle);
     }
-//----------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongSquareInputShouldThrowIllegalArgumentException() {
+        String input = "S t";
+        Shape shape = shapeFactory.createShape(input);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongCircleInputShouldThrowIllegalArgumentException() {
+        String input = "C y";
+        Shape shape = shapeFactory.createShape(input);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongTriangleInputShouldThrowIllegalArgumentException() {
+        String input = "T u";
+        Shape shape = shapeFactory.createShape(input);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongRectangleInputShouldThrowIllegalArgumentException() {
+        String input = "R i";
+        Shape shape = shapeFactory.createShape(input);
+    }
 }
+//----------------------------------------------------------------------------------------------

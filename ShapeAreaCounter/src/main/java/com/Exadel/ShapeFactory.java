@@ -8,6 +8,9 @@ public class ShapeFactory {
 
         Scanner charScanner = new Scanner(input);
 
+        if (!charScanner.hasNext()) {
+            throw new IllegalArgumentException("Empty parameters.");
+        }
         String shapeTypeSymbol = charScanner.next();
 
         ShapeType shapeType = ShapeType.valueOf(shapeTypeSymbol);
