@@ -111,21 +111,24 @@ public class ShapeFactoryTest {
     public void testLegalInputsShouldReturnSquareObject() {
         String[] input = {"s", "2.1"};
         Shape shape = shapeFactory.createShape(input);
-        assertNotNull("Expected Square, but got: " + shape.getClass(), shape instanceof Rectangle);
+        assertNotNull("Shape is null", shape);
+        assertTrue("Expected Square, but got: " + shape.getClass(), shape instanceof Square);
     }
 
     @Test
     public void testLegalInputsShouldReturnCircleObject() {
         String[] input = {"c", "5.5"};
         Shape shape = shapeFactory.createShape(input);
-        assertNotNull("Expected Circle, but got: " + shape.getClass(), shape instanceof Rectangle);
+        assertNotNull("Shape is null", shape);
+        assertTrue("Expected Circle, but got: " + shape.getClass(), shape instanceof Circle);
     }
 
     @Test
     public void testLegalInputsShouldReturnTriangleObject() {
         String[] input = {"T", "20.5"};
         Shape shape = shapeFactory.createShape(input);
-        assertNotNull("Expected Triangle, but got: " + shape.getClass(), shape instanceof Rectangle);
+        assertNotNull("Shape is null", shape);
+        assertTrue("Expected Triangle, but got: " + shape.getClass(), shape instanceof Triangle);
     }
 
     @Test
