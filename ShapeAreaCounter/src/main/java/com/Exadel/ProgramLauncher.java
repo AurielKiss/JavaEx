@@ -17,7 +17,6 @@ public class ProgramLauncher {
         Scanner inputScanner = new Scanner(System.in);
 
         introText();
-        //LOG.info("this is logger");
 
         while (true) {
 
@@ -32,18 +31,13 @@ public class ProgramLauncher {
             if (keyboardInput.equalsIgnoreCase("CLOSE")) {
                 break;
             }
-            //System.exit(0);  // nenaudoti projektams
-            //break;
-            //return();
 
             String splitInput[] = keyboardInput.split(DELIMITER);
 
             ShapeFactory shapeFactory = new ShapeFactory();
             Shape shape = shapeFactory.createShape(splitInput);
 
-            if (shape != null) {
-                LOG.info("Area = " + shape.getArea());
-            }
+            LOG.info("Area = " + shape.getArea());
         }
     }
 

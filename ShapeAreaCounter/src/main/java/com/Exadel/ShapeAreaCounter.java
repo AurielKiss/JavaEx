@@ -10,14 +10,6 @@ public class ShapeAreaCounter {
     }
 }
 
-/*
- * a. Nuskaitau ka ivede
- * b. ShapeFactory sukuria figura (isparsinu inputa, ir sukuriu figura)
- * c. Figura moka skaiciuoti savo plota
- * d. Kvieciam figuros metoda, gauti plotui
- * e. Ispausdinam gauta plota
- */
-
  /*
  *        Uzduotis:
  *        1. Parasyt programa, kuriai galima ivesti figuras: trikampi, staciakampi, trapecija, apskritima.
@@ -31,4 +23,10 @@ public class ShapeAreaCounter {
  *        b. Programa yra WEB (kaip war failas).
  *        c. Programa turi REST servisus + Javascript UI duomenu ivedimui.
  *        d. Programa turi kaupti istorija ivestu figuru ir ju paskaiciuotu plotu (naudoti duomenu baze - MongoDB+Morphia)
+ */
+
+/*
+//1. naudoti ShapeType.valueOf metoda kai turi figuros stringa, kad gauti figuros tipa (naudoti scanneri)
+//2. Turint tipa, naudoti ta pati scanneri nuskaityti double reiksmes, kiek ju reikia (pagalvoti kaip pagal tipa panaudoti switch'a)
+//3. Mesti IllegalArgumentException jeigu neteisingi argumentai, su paaiskinancia zinute, kodel neteisingi
  */

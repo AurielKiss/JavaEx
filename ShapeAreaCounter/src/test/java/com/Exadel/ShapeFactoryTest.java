@@ -5,103 +5,104 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ShapeFactoryTest {
-    ShapeFactory shapeFactory = new ShapeFactory();
+
+    private ShapeFactory shapeFactory = new ShapeFactory();
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWithEmptyInputShouldReturnIllegalArgumentException() {
+    public void testWithEmptyInputShouldThrowIllegalArgumentException() {
         String[] input = {""};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWith2EmptyInputsShouldReturnIllegalArgumentException() {
+    public void testWith2EmptyInputsShouldThrowIllegalArgumentException() {
         String[] input = {"", ""};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWith3EmptyInputsShouldReturnIllegalArgumentException() {
+    public void testWith3EmptyInputsShouldThrowIllegalArgumentException() {
         String[] input = {"", "", ""};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWith4EmptyInputsShouldReturnIllegalArgumentException() {
+    public void testWith4EmptyInputsShouldThrowIllegalArgumentException() {
         String[] input = {"", "", "", ""};
         shapeFactory.createShape(input);
     }
 //---------------------------------------------------------------------
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWrongShapeLetterShouldReturnIllegalArgumentException() {
+    public void testWrongShapeLetterShouldThrowIllegalArgumentException() {
         String[] input = {"Av"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeLettersShouldReturnIllegalArgumentException() {
+    public void test2WrongShapeLettersShouldThrowIllegalArgumentException() {
         String[] input = {"dA", "b"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeLettersShouldReturnIllegalArgumentException() {
+    public void test3WrongShapeLettersShouldThrowIllegalArgumentException() {
         String[] input = {"As", "b", "Ca"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeLettersShouldReturnIllegalArgumentException() {
+    public void test4WrongShapeLettersShouldThrowIllegalArgumentException() {
         String[] input = {"A", "cb", "Ca", "d"};
         shapeFactory.createShape(input);
     }
 //----------------------------------------------------------------------
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWrongShapeInputValueShouldReturnIllegalArgumentException() {
+    public void testWrongShapeInputValueShouldThrowIllegalArgumentException() {
         String[] input = {"55"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
+    public void test2WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
         String[] input = {"12.3", "0"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
+    public void test3WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
         String[] input = {"0", "1.56", "9999"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
+    public void test4WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
         String[] input = {"0.51", "2.1", "0", "300"};
         shapeFactory.createShape(input);
     }
 //-----------------------------------------------------------------------------------
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWrongSymbolShouldReturnIllegalArgumentException() {
+    public void testWrongSymbolShouldThrowIllegalArgumentException() {
         String[] input = {"$"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeSymbolsShouldReturnIllegalArgumentException() {
+    public void test2WrongShapeSymbolsShouldThrowIllegalArgumentException() {
         String[] input = {"%", ";"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeSymbolsShouldReturnIllegalArgumentException() {
+    public void test3WrongShapeSymbolsShouldThrowIllegalArgumentException() {
         String[] input = {",", "...", "!!"};
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeSymbolsShouldReturnIllegalArgumentException() {
+    public void test4WrongShapeSymbolsShouldThrowIllegalArgumentException() {
         String[] input = {"!!!", "$$4", "*", "~"};
         shapeFactory.createShape(input);
     }
