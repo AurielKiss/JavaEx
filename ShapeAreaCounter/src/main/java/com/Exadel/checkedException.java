@@ -1,8 +1,8 @@
 package com.Exadel;
 
-public class checkedException extends RuntimeException {
+public class CheckedException extends RuntimeException {
 
-    public checkedException() {
+    public CheckedException() {
         super("Input error");
     }
 }
