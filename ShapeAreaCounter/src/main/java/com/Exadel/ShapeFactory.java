@@ -9,15 +9,15 @@ public class ShapeFactory {
     public Shape createShape(String[] input) {
 
             if (input.length == 1) {
-                System.out.println("Illegal parameters. Try again...");
-                throw new CheckedException();
+                //System.out.println("Illegal parameters. Try again...");
+                throw new IllegalArgumentException("Illegal parameters. Try again...");
                 //return null;
             }
 
         if (input.length == 2) {
             if ((input[0].equals("")) || (input[1].equals(""))) {
                 System.out.println("Empty symbol. Try again...");
-                throw new CheckedException();
+                throw new IllegalArgumentException("Empty symbol. Try again...");
                 //return null;
             }
             if ((input[0].equalsIgnoreCase("T")) && (secondInputCheck(input[1]))) {
@@ -31,11 +31,11 @@ public class ShapeFactory {
 
             } else if (secondInputCheck(input[1])) {
                 System.out.println("Wrong first input (must be a letter) [" + input[0] + "]. Possible letters -> (C,R,S,T). Try again...");
-                throw new CheckedException();
+                throw new IllegalArgumentException("");
                 //return null;  //???? -> throw exception
             } else {
                 System.out.println("Wrong second input (must be a positive number) not->[" + input[1] + "]. Try again...");
-                throw new CheckedException();
+                throw new IllegalArgumentException("");
                 //return null;
             }
         }
@@ -45,16 +45,16 @@ public class ShapeFactory {
                 return new Rectangle(Double.parseDouble(input[1]), Double.parseDouble(input[2]));
             }
             System.out.println("Illegal parameters. Try again...");
-            throw new CheckedException();
+            throw new IllegalArgumentException("Illegal parameters. Try again...");
             //return null;
         }
 
         if (input.length > 3) {
             System.out.println("Too many parameters. Try again...");
-            throw new CheckedException();
+            throw new IllegalArgumentException("");
             //return null;
         }
-        throw new CheckedException();
+        throw new IllegalArgumentException("");
         //return null;
     }
 

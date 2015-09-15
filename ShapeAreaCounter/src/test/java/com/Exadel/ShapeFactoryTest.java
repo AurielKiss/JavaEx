@@ -7,103 +7,119 @@ import static org.junit.Assert.*;
 public class ShapeFactoryTest {
     ShapeFactory shapeFactory = new ShapeFactory();
 
-    @Test(expected = CheckedException.class)
-    public void testWithEmptyInputShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWithEmptyInputShouldReturnIllegalArgumentException() {
         String[] input = {""};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void testWith2EmptyInputsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWith2EmptyInputsShouldReturnIllegalArgumentException() {
         String[] input = {"", ""};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void testWith3EmptyInputsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWith3EmptyInputsShouldReturnIllegalArgumentException() {
         String[] input = {"", "", ""};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void testWith4EmptyInputsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWith4EmptyInputsShouldReturnIllegalArgumentException() {
         String[] input = {"", "", "", ""};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 //---------------------------------------------------------------------
 
-    @Test(expected = CheckedException.class)
-    public void testIllegalShapeLetterShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongShapeLetterShouldReturnIllegalArgumentException() {
         String[] input = {"Av"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test2IllegalShapeLettersShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test2WrongShapeLettersShouldReturnIllegalArgumentException() {
         String[] input = {"dA", "b"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test3IllegalShapeLettersShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test3WrongShapeLettersShouldReturnIllegalArgumentException() {
         String[] input = {"As", "b", "Ca"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test4IllegalShapeLettersShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test4WrongShapeLettersShouldReturnIllegalArgumentException() {
         String[] input = {"A", "cb", "Ca", "d"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 //----------------------------------------------------------------------
 
-    @Test(expected = CheckedException.class)
-    public void testIllegalShapeInputValueShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongShapeInputValueShouldReturnIllegalArgumentException() {
         String[] input = {"55"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test2IllegalShapeInputsValuesShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test2WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
         String[] input = {"12.3", "0"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test3IllegalShapeInputsValuesShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test3WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
         String[] input = {"0", "1.56", "9999"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test4IllegalShapeInputsValuesShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test4WrongShapeInputsValuesShouldReturnIllegalArgumentException() {
         String[] input = {"0.51", "2.1", "0", "300"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 //-----------------------------------------------------------------------------------
 
-    @Test(expected = CheckedException.class)
-    public void testIllegalShapeSymbolShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testWrongSymbolShouldReturnIllegalArgumentException() {
         String[] input = {"$"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test2IllegalShapeSymbolsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test2WrongShapeSymbolsShouldReturnIllegalArgumentException() {
         String[] input = {"%", ";"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test3IllegalShapeSymbolsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test3WrongShapeSymbolsShouldReturnIllegalArgumentException() {
         String[] input = {",", "...", "!!"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
 
-    @Test(expected = CheckedException.class)
-    public void test4IllegalShapeSymbolsShouldReturnNull() {
+    @Test(expected = IllegalArgumentException.class)
+    public void test4WrongShapeSymbolsShouldReturnIllegalArgumentException() {
         String[] input = {"!!!", "$$4", "*", "~"};
-        assertNull("Shape not null", shapeFactory.createShape(input));
+        shapeFactory.createShape(input);
+        //assertNull("Shape not null", shapeFactory.createShape(input));
     }
     //--------------------------------------------------------------------------------------------
 
