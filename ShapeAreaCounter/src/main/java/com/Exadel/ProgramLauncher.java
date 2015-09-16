@@ -11,36 +11,34 @@ public class ProgramLauncher {
             .getLogger(ProgramLauncher.class);
 
     public void run() {
-        introText();
+
         Scanner inputScanner = new Scanner(System.in);
 
+        introText();
+
         while (true) {
-            if (keyboardInputReader(inputScanner)) break;
+
+            LOG.info("--------------------");
+            LOG.info("Enter parameters:");
+
+            String keyboardInput = inputScanner.nextLine();
+
+            if (keyboardInput.equalsIgnoreCase("EXIT") || keyboardInput.equalsIgnoreCase("CLOSE")) {
+                break;
+            }
+
+            ShapeFactory shapeFactory = new ShapeFactory();
+            Shape shape = shapeFactory.createShape(keyboardInput);
+
+            LOG.info("Area = " + shape.getArea());
         }
-    }
-
-    private boolean keyboardInputReader(Scanner inputScanner) {
-        LOG.debug("--------------------");
-        LOG.debug("Enter parameters:");
-
-        String keyboardInput = inputScanner.nextLine();
-
-        if (keyboardInput.equalsIgnoreCase("EXIT") || keyboardInput.equalsIgnoreCase("CLOSE")) {
-            return true;
-        }
-
-        ShapeFactory shapeFactory = new ShapeFactory();
-        Shape shape = shapeFactory.createShape(keyboardInput);
-
-        LOG.debug("Area = " + shape.getArea());
-        return false;
     }
 
     private void introText() {
         System.out.println();
         System.out.println(">> Welcome to Shape Area Calculator <<");
         System.out.println();
-        System.out.println("Please type first letter of SHAPE (C,R,S,T) and input. Example (R 1 2.3) or (C 6.5).");
+        System.out.println("Please type first letter of SHAPE (C,R,S,T) and input. Example (R 1 2) or (C 6.5).");
     }
 
 }

@@ -18,10 +18,10 @@ public class ShapeFactory {
 
         ShapeType shapeType = ShapeType.valueOf(shapeTypeSymbol);
 
-        return chooseShapeType(charScanner, shapeType);
+        return createShapeByType(charScanner, shapeType);
     }
 
-    public Shape chooseShapeType(Scanner charScanner, ShapeType shapeType) {
+    public Shape createShapeByType(Scanner charScanner, ShapeType shapeType) {
         switch (shapeType) {
             case T:
                 return new Triangle(charScanner.nextDouble());

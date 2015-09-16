@@ -17,7 +17,6 @@ public class ShapeFactoryTest {
         String input = "";
         shapeFactory.createShape(input);
     }
-//---------------------------------------------------------------------
 
     @Test(expected = IllegalArgumentException.class)
     public void testWrongShapeLetterShouldThrowIllegalArgumentException() {
@@ -26,73 +25,16 @@ public class ShapeFactoryTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "dA b";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "As b Ca";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeLettersShouldThrowIllegalArgumentException() {
-        String input = "A cb Ca d";
-        shapeFactory.createShape(input);
-    }
-//----------------------------------------------------------------------
-
-    @Test(expected = IllegalArgumentException.class)
     public void testWrongShapeInputValueShouldThrowIllegalArgumentException() {
         String input = "55";
         shapeFactory.createShape(input);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "12.3 0";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "0 1.56 9999";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeInputsValuesShouldThrowIllegalArgumentException() {
-        String input = "0.51 2.1 0 300";
-        shapeFactory.createShape(input);
-    }
-//-----------------------------------------------------------------------------------
-
-    @Test(expected = IllegalArgumentException.class)
     public void testWrongSymbolShouldThrowIllegalArgumentException() {
         String input = "$";
         shapeFactory.createShape(input);
     }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test2WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = "% ;";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test3WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = ", ... !!";
-        shapeFactory.createShape(input);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void test4WrongShapeSymbolsShouldThrowIllegalArgumentException() {
-        String input = "!!! $$4 * ~";
-        shapeFactory.createShape(input);
-    }
-//--------------------------------------------------------------------------------------------
 
     @Test
     public void testLegalInputsShouldReturnSquareObject() {
@@ -136,19 +78,19 @@ public class ShapeFactoryTest {
     @Test(expected = InputMismatchException.class)
     public void testWrongCircleInputShouldThrowIllegalArgumentException() {
         String input = "C y";
-        Shape shape = shapeFactory.createShape(input);
+        shapeFactory.createShape(input);
     }
 
     @Test(expected = InputMismatchException.class)
     public void testWrongTriangleInputShouldThrowIllegalArgumentException() {
         String input = "T u";
-        Shape shape = shapeFactory.createShape(input);
+        shapeFactory.createShape(input);
     }
 
     @Test(expected = InputMismatchException.class)
     public void testWrongRectangleInputShouldThrowIllegalArgumentException() {
         String input = "R i";
-        Shape shape = shapeFactory.createShape(input);
+        shapeFactory.createShape(input);
     }
 }
 //----------------------------------------------------------------------------------------------
