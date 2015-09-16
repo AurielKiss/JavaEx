@@ -22,24 +22,19 @@ public class ShapeFactory {
     }
 
     public Shape createShapeByType(Scanner charScanner, ShapeType shapeType) {
-
         switch (shapeType) {
             case T:
-                if (charScanner.hasNextDouble()) {
-                    return new Triangle(charScanner.nextDouble());
-                }
+                return new Triangle(charScanner.nextDouble());
+
             case S:
-                if (charScanner.hasNextDouble()) {
-                    return new Square(charScanner.nextDouble());
-                }
+                return new Square(charScanner.nextDouble());
+
             case C:
-                if (charScanner.hasNextDouble()) {
-                    return new Circle(charScanner.nextDouble());
-                }
+                return new Circle(charScanner.nextDouble());
+
             case R:
-                if (charScanner.hasNextDouble()) {
-                    return new Rectangle(charScanner.nextDouble(), charScanner.nextDouble());
-                }
+                return new Rectangle(charScanner.nextDouble(), charScanner.nextDouble());
+
             default:
                 throw new IllegalArgumentException("Not supported shape type specified" + shapeType);
         }

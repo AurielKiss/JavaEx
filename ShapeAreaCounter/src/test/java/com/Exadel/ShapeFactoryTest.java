@@ -1,13 +1,11 @@
 package com.Exadel;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.InputMismatchException;
 
 import static org.junit.Assert.*;
 
-@Ignore
 public class ShapeFactoryTest {
 
     private ShapeFactory shapeFactory = new ShapeFactory();
@@ -68,25 +66,25 @@ public class ShapeFactoryTest {
         assertTrue("Expected Rectangle, but got: " + shape.getClass(), shape instanceof Rectangle);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongSquareInputShouldThrowIllegalArgumentException() {
         String input = "S t";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongCircleInputShouldThrowIllegalArgumentException() {
         String input = "C y";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongTriangleInputShouldThrowIllegalArgumentException() {
         String input = "T u";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongRectangleInputShouldThrowIllegalArgumentException() {
         String input = "R i";
         shapeFactory.createShape(input);
