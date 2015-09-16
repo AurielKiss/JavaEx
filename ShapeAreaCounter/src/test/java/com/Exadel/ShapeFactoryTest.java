@@ -3,6 +3,8 @@ package com.Exadel;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.InputMismatchException;
+
 import static org.junit.Assert.*;
 
 @Ignore
@@ -125,25 +127,25 @@ public class ShapeFactoryTest {
     }
 //--------------------------------------------------------------------------------------------
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongSquareInputShouldThrowIllegalArgumentException() {
         String input = "S t";
-        Shape shape = shapeFactory.createShape(input);
+        shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongCircleInputShouldThrowIllegalArgumentException() {
         String input = "C y";
         Shape shape = shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongTriangleInputShouldThrowIllegalArgumentException() {
         String input = "T u";
         Shape shape = shapeFactory.createShape(input);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InputMismatchException.class)
     public void testWrongRectangleInputShouldThrowIllegalArgumentException() {
         String input = "R i";
         Shape shape = shapeFactory.createShape(input);
