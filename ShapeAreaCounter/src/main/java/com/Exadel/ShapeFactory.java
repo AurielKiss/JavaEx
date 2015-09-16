@@ -25,17 +25,21 @@ public class ShapeFactory {
 
         switch (shapeType) {
             case T:
-                if (charScanner.hasNextDouble())
+                if (charScanner.hasNextDouble()) {
                     return new Triangle(charScanner.nextDouble());
+                }
             case S:
-                if (charScanner.hasNextDouble())
+                if (charScanner.hasNextDouble()) {
                     return new Square(charScanner.nextDouble());
+                }
             case C:
-                if (charScanner.hasNextDouble())
+                if (charScanner.hasNextDouble()) {
                     return new Circle(charScanner.nextDouble());
+                }
             case R:
-                if (charScanner.hasNextDouble())
+                if (charScanner.hasNextDouble()) {
                     return new Rectangle(charScanner.nextDouble(), charScanner.nextDouble());
+                }
             default:
                 throw new IllegalArgumentException("Not supported shape type specified" + shapeType);
         }
