@@ -36,7 +36,7 @@ public class ShapeFactory {
                 return new Rectangle(charScanner.nextDouble(), charScanner.nextDouble());
 
             default:
-                throw new IllegalArgumentException("Illegal parameters.");
+                throw new IllegalArgumentException("Not supported shape type specified" + shapeType);
         }
     }
 }
