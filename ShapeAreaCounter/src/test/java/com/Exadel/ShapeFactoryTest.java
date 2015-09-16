@@ -67,30 +67,28 @@ public class ShapeFactoryTest {
         assertNotNull("Shape is null", shape);
         assertTrue("Expected Rectangle, but got: " + shape.getClass(), shape instanceof Rectangle);
     }
-//--------------------------------------------------------------------------------------------
 
-    @Test(expected = InputMismatchException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testWrongSquareInputShouldThrowIllegalArgumentException() {
         String input = "S t";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = InputMismatchException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testWrongCircleInputShouldThrowIllegalArgumentException() {
         String input = "C y";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = InputMismatchException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testWrongTriangleInputShouldThrowIllegalArgumentException() {
         String input = "T u";
         shapeFactory.createShape(input);
     }
 
-    @Test(expected = InputMismatchException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testWrongRectangleInputShouldThrowIllegalArgumentException() {
         String input = "R i";
         shapeFactory.createShape(input);
     }
 }
-//----------------------------------------------------------------------------------------------
