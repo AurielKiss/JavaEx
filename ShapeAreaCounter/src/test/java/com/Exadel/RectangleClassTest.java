@@ -19,6 +19,6 @@ public class RectangleClassTest {
         Double input = 2.0;
         Double output = 4.0;
         Rectangle rectangle = new Rectangle(input, input);
-        assertEquals("Rectangle area does not match", output, rectangle.getArea(), 0.001);
+        assertEquals(0, output.compareTo(rectangle.getArea()));
     }
 }

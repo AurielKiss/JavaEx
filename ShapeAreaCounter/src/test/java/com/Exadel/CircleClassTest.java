@@ -19,6 +19,6 @@ public class CircleClassTest {
         Double input = 2.0;
         Double output = 12.56;
         Circle circle = new Circle(input);
-        assertEquals("Circle area does not match", output, circle.getArea(), 0.001);
+        assertEquals(0, output.compareTo(circle.getArea()));
     }
 }

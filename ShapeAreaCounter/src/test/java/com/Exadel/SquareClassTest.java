@@ -19,6 +19,6 @@ public class SquareClassTest {
         Double input = 2.0;
         Double output = 4.0;
         Square square = new Square(input);
-        assertEquals("Square area does not match", output, square.getArea(), 0.001);
+        assertEquals(0, output.compareTo(square.getArea()));
     }
 }

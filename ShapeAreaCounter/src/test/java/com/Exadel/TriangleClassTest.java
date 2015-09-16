@@ -19,7 +19,6 @@ public class TriangleClassTest {
         Double input = 2.0;
         Double output = 2.0;
         Triangle triangle = new Triangle(input);
-        assertEquals("Triangle area does not match", output, triangle.getArea(), 0.001);
-        assertEquals(0, output.compareTo(triangle.getArea())); //same as previous
+        assertEquals(0, output.compareTo(triangle.getArea()));
     }
 }
