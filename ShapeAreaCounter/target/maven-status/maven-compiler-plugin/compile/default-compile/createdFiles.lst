@@ -1,1 +1,11 @@
+com\Exadel\Triangle.class
+com\Exadel\ShapeType.class
+com\Exadel\ProgramLauncher.class
+com\Exadel\Rectangle.class
+com\Exadel\Launcher.class
+com\Exadel\Square.class
+com\Exadel\Shape.class
+com\Exadel\ShapeFactory.class
 com\Exadel\ShapeAreaCounter.class
+com\Exadel\ShapeFactory$1.class
+com\Exadel\Circle.class

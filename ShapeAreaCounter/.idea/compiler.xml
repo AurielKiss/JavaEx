@@ -32,7 +32,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ShapeAreaCounter" target="1.5" />
+      <module name="ShapeAreaCounter" target="1.6" />
       <module name="StringCalculator" target="1.7" />
     </bytecodeTargetLevel>
   </component>

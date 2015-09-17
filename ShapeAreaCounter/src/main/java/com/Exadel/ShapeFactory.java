@@ -1,8 +1,11 @@
 package com.Exadel;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Locale;
 import java.util.Scanner;
 
+@Service
 public class ShapeFactory {
 
     public Shape createShape(String input) {

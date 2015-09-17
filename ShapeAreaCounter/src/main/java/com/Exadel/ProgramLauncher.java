@@ -4,11 +4,17 @@ import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class ProgramLauncher {
+@Service
+public class ProgramLauncher implements Launcher {
 
     private static final Logger LOG = LogManager
             .getLogger(ProgramLauncher.class);
+
+    @Autowired
+    private ShapeFactory shapeFactory;
 
     public void run() {
 
@@ -27,7 +33,7 @@ public class ProgramLauncher {
                 break;
             }
 
-            ShapeFactory shapeFactory = new ShapeFactory();
+
             Shape shape = shapeFactory.createShape(keyboardInput);
 
             LOG.info("Area = " + shape.getArea());
