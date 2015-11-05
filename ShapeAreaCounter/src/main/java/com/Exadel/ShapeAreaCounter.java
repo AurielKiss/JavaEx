@@ -33,14 +33,14 @@ public class ShapeAreaCounter implements CommandLineRunner {
  *        4. Programa turi naudoti Maven.
  *
  *        Papildomos uzduotys (veliau):
- *        a. Programa turi naudoti Spring.
- *        b. Programa yra WEB (kaip war failas).
- *        c. Programa turi REST servisus + Javascript UI duomenu ivedimui.
+ *        A. Programa turi naudoti Spring.
+ *        B. Programa yra WEB (kaip war failas).
+ *        C. Programa turi REST servisus + Javascript UI duomenu ivedimui.
  *        d. Programa turi kaupti istorija ivestu figuru ir ju paskaiciuotu plotu (naudoti duomenu baze - MongoDB+Morphia)
  */
 
 /*
 //1. naudoti ShapeType.valueOf metoda kai turi figuros stringa, kad gauti figuros tipa (naudoti scanneri)
-//2. Turint tipa, naudoti ta pati scanneri nuskaityti double reiksmes, kiek ju reikia (pagalvoti kaip pagal tipa panaudoti switch'a)
+//2. Turint tipa, naudoti ta pati scanneri nuskaityti double reiksmes, kiek ju reikia (pagalvoti kaip pagal tipa panaudoti switch'A)
 //3. Mesti IllegalArgumentException jeigu neteisingi argumentai, su paaiskinancia zinute, kodel neteisingi
  */
