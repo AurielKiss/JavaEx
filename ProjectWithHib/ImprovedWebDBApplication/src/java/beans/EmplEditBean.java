@@ -37,7 +37,7 @@ public class EmplEditBean { //backing bean
         Map<String, String> params = FacesContext.getCurrentInstance().
                 getExternalContext().getRequestParameterMap();
         String id = params.get("id");
-        System.out.println("id = " + id);
+        System.out.println("ID from URL = " + id);
         try {
             editEmployee(Integer.valueOf(id));
         } catch (NumberFormatException e) {
