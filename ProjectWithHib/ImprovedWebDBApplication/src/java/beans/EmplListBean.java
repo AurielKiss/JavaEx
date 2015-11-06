@@ -17,7 +17,7 @@ public class EmplListBean implements Serializable {
     @ManagedProperty(value = "#{EmployeeDAOHibernateImpl}")
     private EmployeeDAO employeeDaoInjected;
 
-        public List<Employee> getListEmp() {
+    public List<Employee> getListEmp() {
         return employeeDaoInjected.getAllEmployeesFromDb();
     }
     

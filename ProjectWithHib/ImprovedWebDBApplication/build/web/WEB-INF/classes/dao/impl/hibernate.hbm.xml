@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class  name="beans.EmployeeBean" table="EMPLOYEE">
+    <class name="beans.EmployeeBean" table="EMPLOYEE">
         <id name="id" type="int">
             <column name="ID" />
             <generator class="assigned" />
@@ -9,7 +9,7 @@
         <property name="name" type="string">
             <column name="NAME" length="30" />
         </property>
-<!--    <property name="age" type="integer">
+        <!--    <property name="age" type="integer">
             <column name="AGE" length="30" />
         </property>
         <property name="town" type="string">
