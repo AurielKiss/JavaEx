@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
 import javax.faces.bean.ManagedBean;
@@ -19,8 +19,9 @@ import javax.faces.context.FacesContext;
 @ViewScoped
 public class EmplEditBean { //backing bean
 
-//    private static final Logger LOG = LogManager
-//            .getLogger(EmplEditBean.class);
+    private static final Logger LOG = LogManager
+            .getLogger(EmplEditBean.class);
+
     private Map<String, List<String>> citiesMap;
 
     private Employee employee;
@@ -37,7 +38,7 @@ public class EmplEditBean { //backing bean
         Map<String, String> params = FacesContext.getCurrentInstance().
                 getExternalContext().getRequestParameterMap();
         String id = params.get("id");
-        System.out.println("ID from URL = " + id);
+        LOG.info("ID from URL = " + id);
         try {
             editEmployee(Integer.valueOf(id));
         } catch (NumberFormatException e) {
@@ -62,13 +63,12 @@ public class EmplEditBean { //backing bean
     }
 
     private void addNewEmployee() {
-
-        System.out.println("ADD NEW EMPLOYEE");
+        LOG.info("ADD NEW EMPLOYEE");
         setEmployee(new Employee());
     }
 
     private void editEmployee(int id) {
-        System.out.println("EDIT EMPLOYEE WITH ID: " + id);
+        LOG.info("EDIT EMPLOYEE WITH ID: " + id);
         setEmployee(employeeDaoInjected.load(id));
     }
 

@@ -8,6 +8,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,6 +18,9 @@ import org.hibernate.Session;
 @ApplicationScoped
 public class EmployeeDAOHibernateImpl implements EmployeeDAO, Serializable {
 
+    private static final Logger LOG = LogManager
+            .getLogger(EmployeeDAOHibernateImpl.class);
+
     @Override
     public void saveEmployee(Employee employee) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -23,21 +28,23 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO, Serializable {
 
     @Override
     public Employee load(int id) {
-
+        Query query;
         Session session = null;
         Employee employee = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             //session.beginTransaction();
-            employee = (Employee) session.get(Employee.class, id); //session.get session.load
-            //Hibernate.initialize(employee);
+            query = session.createQuery("from beans.EmployeeBean where id=" + id);
+            employee = (Employee)query.uniqueResult();
+            //employee = (Employee) session.get(Employee.class, id); //session.get session.load
         } catch (Exception e) {
         } finally {
-            System.out.print("Mano employeris > "+employee);
+            LOG.info("Mano employeris > " + employee);
             if (session != null && session.isOpen()) {
                 session.close();
             }
         }
+        //return query.list();
         return employee;
     }
 
