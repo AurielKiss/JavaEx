@@ -27,7 +27,7 @@ public class EmplEditBean { //backing bean
 
     //@ManagedProperty(value = "#{testBeanForInjection}")
     //@ManagedProperty(value = "#{employeeDAOSQLImpl}")
-    @ManagedProperty(value = "#{EmployeeDAOHibernateImpl}")
+    @ManagedProperty(value = "#{employeeDAOHibernateImpl}")
     private EmployeeDAO employeeDaoInjected;
 
     @PostConstruct

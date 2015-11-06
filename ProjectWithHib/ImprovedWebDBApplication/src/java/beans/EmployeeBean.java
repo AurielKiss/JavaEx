@@ -2,11 +2,8 @@ package beans;
 
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
 
 public class EmployeeBean implements Serializable {
-
-    //ManagedBean manList;
 
     private int id;
     private String name;
@@ -28,10 +25,10 @@ public class EmployeeBean implements Serializable {
     public EmployeeBean() {
     }
 
-//    @PostConstruct
-//    public void init() {
-//        System.out.println(id);
-//    }
+    @PostConstruct
+    public void init() {
+        System.out.println(id);
+    }
 
     public int getId() {
         return id;

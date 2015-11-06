@@ -9,7 +9,7 @@
         <property name="name" type="string">
             <column name="NAME" length="30" />
         </property>
-        <!--    <property name="age" type="integer">
+        <property name="age" type="integer">
             <column name="AGE" length="30" />
         </property>
         <property name="town" type="string">
@@ -20,7 +20,7 @@
         </property>
         <property name="phone" type="integer">
             <column name="PHONE" length="30" />
-        </property>-->
+        </property>
         
     </class>
 </hibernate-mapping>
