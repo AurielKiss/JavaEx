@@ -28,24 +28,25 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO, Serializable {
 
     @Override
     public Employee load(int id) {
-        Query query;
+        Query query = null;
         Session session = null;
         Employee employee = null;
         try {
             
             session = HibernateUtil.getSessionFactory().openSession();
             //session.beginTransaction();
-            //query = session.createQuery("from beans.EmployeeBean where id=" + id);
-            //query.setMaxResults(1);
-            //employee = (Employee) query.uniqueResult();
-            employee = (Employee) session.get(EmployeeBean.class, id); //session.get session.load
-            LOG.info("out employee not found for id " + id);
+            query = session.createQuery("from beans.EmployeeBean where id=" + id);
+            query.setMaxResults(1);
+            LOG.info("1  Mano employeris -> " + employee+" id: "+id);
+            employee = (Employee) query.uniqueResult();
+            LOG.info("2  Mano employeris -> " + employee);
+            //employee = (Employee) session.get(EmployeeBean.class, id); //session.get session.load
             if (employee == null) {
                 LOG.info("employee not found for id " + id);
             }
         } catch (Exception e) {
         } finally {
-            LOG.info("Mano employeris > " + employee);
+            LOG.info("Mano employeris -> " + employee);
             if (session != null && session.isOpen()) {
                 session.close();
             }

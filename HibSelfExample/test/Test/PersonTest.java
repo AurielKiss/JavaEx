@@ -35,10 +35,11 @@ public class PersonTest {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         Person person = new Person();
-        person.setId(1);
-        person.setName("Julia");
+        person.setName("J. C. Smell");
         session.save(person);
         tx.commit();
         session.close();
     }
+
+    
 }
