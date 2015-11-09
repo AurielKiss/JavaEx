@@ -32,11 +32,17 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO, Serializable {
         Session session = null;
         Employee employee = null;
         try {
+            
             session = HibernateUtil.getSessionFactory().openSession();
             //session.beginTransaction();
-            query = session.createQuery("from beans.EmployeeBean where id=" + id);
-            employee = (Employee)query.uniqueResult();
-            //employee = (Employee) session.get(Employee.class, id); //session.get session.load
+            //query = session.createQuery("from beans.EmployeeBean where id=" + id);
+            //query.setMaxResults(1);
+            //employee = (Employee) query.uniqueResult();
+            employee = (Employee) session.get(EmployeeBean.class, id); //session.get session.load
+            LOG.info("out employee not found for id " + id);
+            if (employee == null) {
+                LOG.info("employee not found for id " + id);
+            }
         } catch (Exception e) {
         } finally {
             LOG.info("Mano employeris > " + employee);
