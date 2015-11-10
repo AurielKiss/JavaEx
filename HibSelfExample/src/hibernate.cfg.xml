@@ -8,6 +8,8 @@
         <property name="hibernate.connection.username">aure</property>
         <property name="hibernate.connection.password">aure</property>
         <mapping class="POJO.Person"/>
+        <mapping class="POJO.Ranking"/>
+        <mapping class="POJO.Skill"/>
 <!--            <mapping resource="POJO/hibernate.hbm.xml"/>-->   
     </session-factory>
 </hibernate-configuration>

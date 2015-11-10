@@ -38,9 +38,9 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO, Serializable {
             query = session.createQuery("from beans.EmployeeBean where id=" + id);
             query.setMaxResults(1);
             LOG.info("1  Mano employeris -> " + employee+" id: "+id);
-            employee = (Employee) query.uniqueResult();
-            LOG.info("2  Mano employeris -> " + employee);
-            //employee = (Employee) session.get(EmployeeBean.class, id); //session.get session.load
+//            employee = (Employee) query.uniqueResult();
+//            LOG.info("2  Mano employeris -> " + employee);
+            employee = (Employee) session.get(EmployeeBean.class, id); //session.get session.load
             if (employee == null) {
                 LOG.info("employee not found for id " + id);
             }
